@@ -1,7 +1,0 @@
-<Solution>
-  <Folder Name="/Solution Items/">
-    <File Path="README.md" />
-  </Folder>
-  <Project Path="JabraAssignment.Tests/JabraAssignment.Tests.csproj" />
-  <Project Path="JabraAssignment/JabraAssignment.csproj" />
-</Solution>

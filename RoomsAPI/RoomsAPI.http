@@ -1,0 +1,41 @@
+@RoomsAPI_HostAddress = http://localhost:5243
+
+### Get rooms
+GET {{RoomsAPI_HostAddress}}/api/rooms
+Accept: application/json
+
+### Book Small Room 10:00-11:00
+POST {{RoomsAPI_HostAddress}}/api/rooms/1/reservations
+Content-Type: application/json
+
+{
+  "start": "2030-10-01T10:00:00Z",
+  "end": "2030-10-01T11:00:00Z",
+  "title": "Team sync"
+}
+
+### Overlaps with 10:00-11:00 -> 409
+POST {{RoomsAPI_HostAddress}}/api/rooms/1/reservations
+Content-Type: application/json
+
+{
+  "start": "2030-10-01T10:30:00Z",
+  "end": "2030-10-01T11:30:00Z",
+  "title": "Overlapping meeting"
+}
+
+### Starts when the first one ends -> 201
+POST {{RoomsAPI_HostAddress}}/api/rooms/1/reservations
+Content-Type: application/json
+
+{
+  "start": "2030-10-01T11:00:00Z",
+  "end": "2030-10-01T12:00:00Z",
+  "title": "Back-to-back meeting"
+}
+
+### Reservations of a room in a time range
+GET {{RoomsAPI_HostAddress}}/api/rooms/1/reservations?from=2030-10-01T00:00:00Z&to=2030-10-02T00:00:00Z
+Accept: application/json
+
+###

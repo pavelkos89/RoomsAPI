@@ -5,13 +5,13 @@ REST API for booking conference rooms. .NET 10, ASP.NET Core Web API, EF Core, S
 ## How to run
 
 ```
-cd JabraAssignment
+cd RoomsAPI
 dotnet run
 ```
 
 The API runs on `http://localhost:5243`. The SQLite database (`roombooking.db`) is created on first start with three sample rooms. Delete the file to reset the data.
 
-`JabraAssignment/JabraAssignment.http` has ready-made requests, including the overlap examples from the task. Open it in Visual Studio and click "Send request".
+`RoomsAPI/RoomsAPI.http` has ready-made requests, including the overlap examples from the task. Open it in Visual Studio and click "Send request".
 
 ## How to test
 
@@ -21,8 +21,8 @@ dotnet test
 
 Run from the repository root.
 
-- `JabraAssignment.Tests/Controllers` - integration tests. The whole API runs in memory with its own temporary SQLite file per test, and the tests send real HTTP requests. This is on purpose: the overlap rule is a SQL query, so it has to be tested against a real database.
-- `JabraAssignment.Tests/Dtos`, `Binding` - unit tests for validation and date parsing.
+- `RoomsAPI.Tests/Controllers` - integration tests. The whole API runs in memory with its own temporary SQLite file per test, and the tests send real HTTP requests. This is on purpose: the overlap rule is a SQL query, so it has to be tested against a real database.
+- `RoomsAPI.Tests/Dtos`, `Binding` - unit tests for validation and date parsing.
 
 ## API
 
