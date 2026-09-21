@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="JabraAssignment.Tests/JabraAssignment.Tests.csproj" />
+  <Project Path="JabraAssignment/JabraAssignment.csproj" />
+</Solution>
